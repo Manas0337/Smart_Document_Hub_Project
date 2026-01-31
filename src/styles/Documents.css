@@ -1,0 +1,136 @@
+.documents-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #88a9ec, #e5e7eb);
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: absolute;
+  top: 22px;
+  left: 30px;
+
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  color: #1e3a8a;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateX(-3px);
+}
+
+/* MAIN CONTAINER */
+.documents-container {
+  width: 900px;
+}
+
+/* HEADER */
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.documents-header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.primary-btn {
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  margin-top: 80px;
+  color: #6b7280;
+}
+
+/* DOCUMENT LIST */
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* CARD */
+.document-card {
+  background: white;
+  padding: 22px 26px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* INFO */
+.doc-info h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.category {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.filename {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ACTIONS */
+.doc-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+.action-btn:hover {
+  background: #f3f4f6;
+}
+
+.action-btn.danger {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.action-btn.danger:hover {
+  background: #fee2e2;
+}

@@ -1,0 +1,127 @@
+/* PAGE */
+.editor-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f1f5f9;
+  font-family: "Inter", sans-serif;
+}
+
+/* HEADER */
+.editor-header {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.editor-header button {
+  background: white;
+  color: #1e40af;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* BODY */
+.editor-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  gap: 18px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* VERSION HISTORY */
+.version-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #eff6ff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.version-item:hover {
+  background: #dbeafe;
+}
+
+/* EDITOR */
+.editor-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.editor-textarea {
+  width: 100%;
+  height: 42vh;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  font-size: 15px;
+  resize: none;
+}
+
+.editor-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* COMMENTS */
+.comment {
+  background: #eff6ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.comment-input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #c7d2fe;
+}
+
+/* FOOTER */
+.editor-footer {
+  padding: 14px 24px;
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  background: #e0e7ff;
+  color: #1e40af;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}

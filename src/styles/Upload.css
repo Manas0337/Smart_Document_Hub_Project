@@ -1,0 +1,102 @@
+.upload-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #88a9ec, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.back-link {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  cursor: pointer;
+  color: #374151;
+  font-size: 14px;
+}
+
+/* BACK BUTTON – SAME AS DOCUMENTS */
+.back-btn {
+  position: absolute;
+  top: 22px;
+  left: 30px;
+
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  color: #1e3a8a;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateX(-3px);
+}
+
+.upload-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.upload-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.upload-header p {
+  font-size: 16px;
+  color: #6b7280;
+  max-width: 520px;
+}
+
+/* BIGGER CARD */
+.upload-card {
+  background: #ffffff;
+  width: 490px;
+  padding: 60px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.upload-card input,
+.upload-card select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.upload-card input:focus,
+.upload-card select:focus {
+  outline: none;
+  border-color: #4b5563;
+}
+
+.upload-card button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #1556b1, #1e40af);
+}
+
+.upload-card button:hover {
+  opacity: 0.9;
+}
