@@ -1,0 +1,71 @@
+.upload-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #8fb1ea, #e7eef9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.back-btn {
+  align-self: flex-start;
+  margin-left: 40px;
+  background: #e6efff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.upload-card {
+  background: white;
+  width: 380px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upload-card input,
+.upload-card select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.upload-card input[type="file"] {
+  padding: 10px;
+}
+
+.upload-card button {
+  margin-top: 10px;
+  padding: 14px;
+  background: linear-gradient(90deg, #1e4fb8, #1c3fa1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

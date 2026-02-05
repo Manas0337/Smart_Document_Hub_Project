@@ -1,0 +1,97 @@
+.docs-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(180deg, #93b3ec 0%, #e9eff8 100%);
+}
+
+.docs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.docs-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.back-btn {
+  background: #eaf0ff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.upload-btn {
+  background: #2f6df6;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.docs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doc-card {
+  background: white;
+  border-radius: 20px;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.doc-info h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.category {
+  margin: 6px 0;
+  color: #666;
+}
+
+.file {
+  font-size: 14px;
+  color: #888;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.doc-actions button {
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.preview {
+  background: #f3f6ff;
+}
+
+.edit {
+  background: #fff3e0;
+}
+
+.delete {
+  background: #ffeaea;
+  color: #c62828;
+}
+
+.muted {
+  color: #666;
+  margin-top: 40px;
+}

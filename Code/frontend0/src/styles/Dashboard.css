@@ -1,0 +1,103 @@
+/* ===== Dashboard Page Wrapper ===== */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 30px 40px;
+  background: linear-gradient(135deg, #9bb7f0, #c9d7f7);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Top Header ===== */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b2c6d;
+}
+
+.dashboard-header p {
+  color: #2d3e5e;
+  margin-top: 5px;
+}
+
+.logout-btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===== Cards Row ===== */
+.dashboard-cards {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* ===== Single Card ===== */
+.dashboard-card {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== Card Title ===== */
+.dashboard-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0b2c6d;
+}
+
+/* ===== Card Description ===== */
+.dashboard-card p {
+  color: #5b6f95;
+  font-size: 14px;
+}
+
+/* ===== Upload Icon Effect ===== */
+.upload-card {
+  border-left: 6px solid #2f6fed;
+}
+
+/* ===== Documents Icon Effect ===== */
+.documents-card {
+  border-left: 6px solid #f5b942;
+}
+
+/* ===== Center Section ===== */
+.dashboard-info {
+  margin-top: 40px;
+  background: #eef3ff;
+  padding: 40px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.dashboard-info h2 {
+  font-size: 28px;
+  color: #0b2c6d;
+  margin-bottom: 15px;
+}
+
+.dashboard-info p {
+  color: #4d5f85;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+}

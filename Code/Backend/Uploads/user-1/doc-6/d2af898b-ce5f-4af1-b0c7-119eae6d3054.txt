@@ -1,0 +1,126 @@
+the solution 1 folder contain Front_end folder which is for frontend and Smart Documentation Hub folder is for backend and give database script in mongodb 
+
+create database according to the requirements then create backend according to the requirements and database and then create integrated frontend according to backend
+
+
+TECH STACK
+- Frontend: React + Vite (JavaScript), React Router, Axios, Bootstrap 5 (responsive, modern UI)
+- Backend: ASP.NET Core Web API (.NET 8 preferred), clean architecture style (Controllers -> Services -> Repositories)
+- Database: MongoDB (MongoDB.Driver)
+- Auth: JWT access token + refresh token support
+- Email OTP: OTP verification for new account email + OTP for password reset (send OTP to email)
+- Environment variables: use .env for frontend and appsettings.json + user secrets for backend
+
+CORE REQUIREMENTS (MUST IMPLEMENT)
+1) AUTH FLOWS (UI + API + DB)
+A. Create Account / Signup Page fields:
+- fullName
+- username (unique)
+- email (unique)
+- mobileNo
+- password (hash it)
+- dateOfBirth
+- After signup: send OTP to email for verification.
+- User is created as emailVerified=false until OTP verified.
+- UI: show success/error toasts (NOT alert), loader, field validation.
+- OTP UI: input box + resend OTP with timer + verify button.
+
+B. Login Page:
+- allow login with either (username OR email) + password
+- return JWT access token + refresh token
+- store tokens securely (access token in memory or localStorage; refresh token in httpOnly cookie if possible; if not, document approach)
+- UI: show errors clearly (invalid creds, not verified email, etc.)
+
+C. Forgot Password Page:
+- input: email
+- send OTP to email
+- UI: success toast “OTP sent”
+
+D. Change/Reset Password Page:
+- fields: email + otp + newPassword
+- verify OTP then update password (hashed)
+- UI: success toast and redirect to login
+
+E. Logout:
+- clear tokens; invalidate refresh token server-side.
+
+2) DASHBOARD AFTER LOGIN (Protected Routes)
+Dashboard must have:
+A. Profile Page
+- show user info (fullName, username, email, mobile, DOB, verified)
+- allow user to edit profile fields (except email/username)
+- API + UI validation
+
+B. Upload Document Page
+- allow upload: pdf, txt, doc/docx, jpg, jpeg, png, image files
+- store file in backend (choose one approach and implement fully):
+  Option 1: store in local “Uploads/” folder + store metadata in MongoDB
+  Option 2: store file as GridFS + store metadata
+- Save metadata: ownerId, originalFileName, storedFileName/fileId, fileType, size, uploadDate
+- After upload show confirmation message (toast)
+- show list of uploaded docs (table/cards) with:
+  - file name
+  - type
+  - upload time
+  - actions: View / Download / Delete
+
+C. View Uploaded Document inside Dashboard:
+- PDF preview (iframe/pdf viewer)
+- Images preview
+- txt preview (render content)
+- doc/docx: allow download + (optional preview if easy)
+
+3) BASIC EDITING (MINIMUM FACILITY)
+Implement minimal editing for:
+- text files: open editor with textarea, update content, save -> backend updates stored file
+- Also provide “Notes” editor for any document: store a separate editable text content per document (like description/summary) in MongoDB.
+- Include versioning baseline: every save creates a new version record in MongoDB (versionNumber, editedBy, timestamp, content or diff).
+Keep it simple but working.
+
+4) SECURITY + QUALITY
+- Password hashing: BCrypt
+- Validation: backend DTO validation + frontend validation
+- Protect routes with JWT (Authorize attribute)
+- Role not required (optional)
+- Proper error handling, consistent API responses
+- CORS configured for Vite dev server
+- Swagger enabled
+- Logging for important events
+
+PROJECT STRUCTURE (MUST DELIVER)
+- Provide full folder structure for:
+  /backend/SmartDocumentHub.Api
+  /backend/SmartDocumentHub.Core
+  /backend/SmartDocumentHub.Infrastructure
+  /frontend/smart-doc-hub-ui
+- Provide complete code for:
+  Backend: Program.cs, appsettings, controllers, models, DTOs, services, Mongo repositories, JWT utilities, email service, OTP logic, refresh token logic, file upload endpoints, file view endpoints, text edit endpoints, version model.
+  Frontend: Vite setup, routing, pages (Signup + OTP Verify, Login, Forgot Password, Reset Password, Dashboard, Profile, Upload, Document Viewer, Text Editor/Notes), Axios interceptor for JWT, protected route component, Bootstrap UI, toast notifications.
+
+DATABASE DESIGN (MONGODB COLLECTIONS)
+- users: { _id, fullName, username, email, mobileNo, passwordHash, dateOfBirth, emailVerified, createdAt, refreshTokens[] }
+- otps: { _id, email, codeHash, purpose (verifyEmail/resetPassword), expiresAt, attempts, createdAt }
+- documents: { _id, ownerId, fileName, fileType, size, storageId/path, uploadedAt, notes, currentVersion }
+- documentVersions: { _id, documentId, versionNumber, content, editedBy, editedAt }
+
+EMAIL OTP
+- Use SMTP (Gmail app password) implementation
+- Provide setup instructions and env variables:
+  SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, FROM_EMAIL
+
+RUN INSTRUCTIONS (MUST INCLUDE)
+- Step-by-step how to run backend (.NET), frontend (Vite), and MongoDB locally
+- Provide Postman collection examples for main endpoints
+- Provide sample .env files (frontend + backend) with placeholders
+- Include troubleshooting tips (CORS, port issues, JWT errors)
+
+IMPORTANT UI REQUIREMENTS
+- Use Bootstrap 5 layout + cards + form floating labels where appropriate
+- No window alerts. Use toast notifications.
+- Show loading spinners for API calls.
+- Clean, classic, professional UI.
+
+OUTPUT FORMAT
+- First show folder structure tree.
+- Then provide code files with clear filenames and code blocks.
+- Don’t skip any critical code: authentication, OTP, upload, protected routes must work.
